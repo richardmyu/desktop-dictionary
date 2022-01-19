@@ -1,20 +1,65 @@
 {
   "name": "desktop-dictionary",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "desktop-dictionary",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/richardmyu/desktop-dictionary.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "richyum",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/richardmyu/desktop-dictionary/issues"
   },
-  "homepage": "https://github.com/richardmyu/desktop-dictionary#readme"
+  "homepage": "https://github.com/richardmyu/desktop-dictionary#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^16.0.6"
+  },
+  "dependencies": {
+    "electron-compile": "^6.4.3",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "desktop_dictionary"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "maintainer": "desktop-dictionary"
+            }
+          }
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
 }
