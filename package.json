@@ -54,7 +54,7 @@
           "config": {
             "options": {
               "maintainer": "yum",
-              "homepage": "https://richardmyu.github.io/"
+              "homepage": "https://github.com/richardmyu"
             }
           }
         },
@@ -63,7 +63,7 @@
           "config": {
             "options": {
               "maintainer": "yum",
-              "homepage": "https://richardmyu.github.io/"
+              "homepage": "https://github.com/richardmyu"
             }
           }
         }
