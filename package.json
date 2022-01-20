@@ -1,40 +1,39 @@
 {
   "name": "desktop-dictionary",
   "version": "1.0.0",
-  "description": "desktop-dictionary",
   "main": "main.js",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
-  },
+  "description": "a desktop dictionary",
+  "author": "yum",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/richardmyu/desktop-dictionary.git"
   },
   "keywords": [],
-  "author": "richyum",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/richardmyu/desktop-dictionary/issues"
   },
   "homepage": "https://github.com/richardmyu/desktop-dictionary#readme",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
     "@electron-forge/maker-deb": "^6.0.0-beta.63",
     "@electron-forge/maker-rpm": "^6.0.0-beta.63",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "electron": "^16.0.6"
+    "electron": "16.0.6",
+    "eslint": "^8.7.0"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
   },
   "config": {
     "forge": {
-      "packagerConfig": {
-        "asar": true
-      },
+      "packagerConfig": {},
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
@@ -45,20 +44,28 @@
         {
           "name": "@electron-forge/maker-zip",
           "platforms": [
-            "darwin"
-          ]
+            "darwin",
+            "linux"
+          ],
+          "config": {}
         },
         {
           "name": "@electron-forge/maker-deb",
           "config": {
             "options": {
-              "maintainer": "desktop-dictionary"
+              "maintainer": "yum",
+              "homepage": "https://richardmyu.github.io/"
             }
           }
         },
         {
           "name": "@electron-forge/maker-rpm",
-          "config": {}
+          "config": {
+            "options": {
+              "maintainer": "yum",
+              "homepage": "https://richardmyu.github.io/"
+            }
+          }
         }
       ]
     }
